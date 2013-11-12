@@ -278,7 +278,7 @@ module.exports = function(grunt) {
                     var flags = po.flags[i];
                     if (msgid && msgstr) {
                         if (flags !== "fuzzy" || options.includeFuzzy) {
-                            translations[msgid] = msgstr;
+                            translations[msgid] = [null, msgstr];
                         }
                     }
                 }
