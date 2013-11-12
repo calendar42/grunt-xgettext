@@ -2,22 +2,22 @@
   "name": "grunt-xgettext",
   "description": "Grunt xgettext plugin for JavaScript and Handlebars",
   "version": "0.2",
-  "homepage": "https://github.com/arendjr/grunt-xgettext",
+  "homepage": "https://github.com/calendar42/grunt-xgettext",
   "author": {
     "name": "Arend van Beelen",
     "email": "arendjr@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/arendjr/grunt-xgettext.git"
+    "url": "git://github.com/calendar42/grunt-xgettext.git"
   },
   "bugs": {
-    "url": "https://github.com/arendjr/grunt-xgettext/issues"
+    "url": "https://github.com/calendar42/grunt-xgettext/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/arendjr/grunt-xgettext/blob/master/LICENSE-MIT"
+      "url": "https://github.com/calendar42/grunt-xgettext/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",

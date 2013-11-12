@@ -1,5 +1,7 @@
 /*
  * grunt-gettext
+ * https://github.com/calendar42/grunt-gettext
+ * Forked from:
  * https://github.com/arendjr/grunt-gettext
  *
  * Copyright (c) 2013 Arend van Beelen, Speakap BV
