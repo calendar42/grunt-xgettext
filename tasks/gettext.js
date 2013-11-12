@@ -18,6 +18,24 @@ module.exports = function(grunt) {
     }
 
     var extractors = {
+        dustjs: function(file, options) {
+            var contents = grunt.file.read(file).replace("\n", " ");
+
+            var messages = {}, result;
+
+            function extractStrings() {
+                var regex = new RegExp("{@trans value=\"([a-zA-Z0-9 -_.,':;<>?/`~!@#$%^&*()+=]*)\" /}", "g");
+                while ((result = regex.exec(contents)) !== null) {
+                    var strings = result[1];
+                    messages[strings] = "";
+                }
+            }
+
+            extractStrings();
+
+            return messages;
+        },
+
         handlebars: function(file, options) {
             var contents = grunt.file.read(file).replace("\n", " ");
 
@@ -199,7 +217,6 @@ module.exports = function(grunt) {
     }
 
     grunt.registerMultiTask("xgettext", "Extracts translatable messages", function() {
-
         var options = this.options({
             functionName: "tr",
             potFile: "messages.pot",
@@ -267,7 +284,10 @@ module.exports = function(grunt) {
                 }
             });
 
-            var contents = JSON.stringify(translations);
+            var contents = "var translation = ";
+            contents += JSON.stringify(translations);
+            contents += ";";
+            contents += "C42.i18n.addTranslations('nl', translation);";
 
             if (options.requireJs) {
                 contents = "define(function() {\n" +

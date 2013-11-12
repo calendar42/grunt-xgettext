@@ -51,6 +51,16 @@ module.exports = function(grunt) {
 
                 files: {
                     /**
+                     * Dustjs files to scan for translatable messages.
+                     *
+                     * Translatable messages look like this:
+                     *
+                     * {@trans value="Translatable string here" /}
+                     *
+                     */
+                    dustjs: [],
+
+                    /**
                      * Handlebars files to scan for translatable messages.
                      *
                      * Assuming the default functionName is used, translatable
@@ -111,4 +121,6 @@ module.exports = function(grunt) {
     grunt.loadTasks("tasks");
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
+
+    grunt.registerTask("default", ["gettext"]);
 };
