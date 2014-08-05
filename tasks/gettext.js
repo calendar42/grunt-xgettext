@@ -190,7 +190,7 @@ module.exports = function(grunt) {
         // msgid untranslated-string
         // msgstr translated-string
 
-        var messageRE = /(^#[\:\.,~|\s]\s?|^msgid\s"|^msgstr\s"|^"|"$)?/g;
+        var messageRE = /(^#[\:\.,~|\s]\s?|^msgctxt\s"|^msgid\s"|^msgstr\s"|^"|"$)?/g;
         function clean(str) {
             return str.replace(messageRE, "").replace(/\\"/g, '"');
         }
@@ -277,7 +277,7 @@ module.exports = function(grunt) {
                     } else {
                         output.msgstr[curMsgid] = clean(line);
                     }
-                } else if (line.substr(0, 7) === "msgctxt ") {
+                } else if (line.substr(0, 8) === "msgctxt ") {
                     // context
                     curSection = "contexts";
                     output.contexts[curMsgid] = clean(line);
