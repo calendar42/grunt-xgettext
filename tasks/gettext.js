@@ -377,10 +377,13 @@ module.exports = function(grunt) {
                 }
             });
 
+            // TODO: Handle in a better way
+            var language = f.dest.match(/\/([^/]*)$/)[1].slice(0, -3);
+
             var contents = "var translation = ";
             contents += JSON.stringify(translations);
             contents += ";";
-            contents += "C42.i18n.addTranslations('nl', translation);";
+            contents += "C42.i18n.addTranslations('" + language + "', translation);";
 
             if (options.requireJs) {
                 contents = "define(function() {\n" +
