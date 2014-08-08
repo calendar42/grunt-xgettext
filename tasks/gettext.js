@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             // Extract {@trans value="TRANS VALUE" /}
             // Extract {@trans value="May" context="day of the month" /}
             function extractStrings() {
-                var transRegex = new RegExp("{@trans([a-zA-Z0-9 - _.,':;<>?/`~!@#$%^&*()+=\"]*)\/}", "g");
+                var transRegex = new RegExp("{@trans([a-zA-Z0-9 \- _.,':;<>?/`~!@#$%^&*()+=\"]*)\/}", "g");
 
                 while ((result = transRegex.exec(contents)) !== null) {
                     var valueRegex = /value=\"([a-zA-Z0-9 \-_.,':;<>?\/`~!@#$%^&*()+=]*)/g; 
