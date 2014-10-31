@@ -86,7 +86,7 @@ module.exports = function(grunt) {
             // {/blocktrans}
 
             function extractBlockTrans() {
-                var regex = /\{\@blocktrans[a-zA-z=\s]*\}([^\{\}]*)\{\/blocktrans\}/gi;
+                var regex = /\{\@blocktrans[a-zA-z=\s_.]*\}([^\{\}]*)\{\/blocktrans\}/gi;
                 while ((result = regex.exec(contents)) !== null) {
                     var strings = result[1];
 
